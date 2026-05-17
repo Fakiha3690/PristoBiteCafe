@@ -1,54 +1,70 @@
 ﻿require('dotenv').config();
-const dns = require('dns')
-const express = require('express')
-const mongoose = require('mongoose')
-const cors = require('cors')
-const path = require('path')
-const fs = require('fs')
+const dns = require('dns');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
 
-dns.setServers(['8.8.8.8', '1.1.1.1'])
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 
-const authRoutes = require('./Routes/authRoutes')
-const menuRoutes = require('./Routes/menuRoutes')
-const orderRoutes = require('./Routes/OrderRoutes')
-const suggestionRoutes = require('./Routes/suggestionRoutes')
+const authRoutes = require('./Routes/authRoutes');
+const menuRoutes = require('./Routes/menuRoutes');
+const orderRoutes = require('./Routes/OrderRoutes');
+const suggestionRoutes = require('./Routes/suggestionRoutes');
 
-const User = require('./models/User')
-const MenuItem = require('./models/MenuItem')
-const Suggestion = require('./models/Suggestion')
+const User = require('./models/User');
+const MenuItem = require('./models/MenuItem');
+const Suggestion = require('./models/Suggestion');
 
-const app = express()
-const PORT = process.env.PORT || 5000
+const app = express();
+const PORT = process.env.PORT || 5000;
+
 const MONGO_URL =
   process.env.MONGO_URL ||
   process.env.MONGODB_URI ||
   process.env.DATABASE_URL ||
-  'mongodb://localhost:27017/presto_cafe'
+  'mongodb://localhost:27017/presto_cafe';
 
-const uploadPath = path.join(__dirname, 'uploads')
-fs.mkdirSync(uploadPath, { recursive: true })
+const uploadPath = path.join(__dirname, 'uploads');
+fs.mkdirSync(uploadPath, { recursive: true });
 
-app.use(cors())
-app.use(express.json())
-app.use('/uploads', express.static(uploadPath))
+// ✅ SINGLE dist path (correct)
+const distPath = path.join(__dirname, '../frontend/dist');
 
-app.use('/api/auth', authRoutes)
-app.use('/api/menu', menuRoutes)
-app.use('/api/orders', orderRoutes)
-app.use('/api/suggestions', suggestionRoutes)
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')))
+app.use('/uploads', express.static(uploadPath));
 
+// API routes
+app.use('/api/auth', authRoutes);
+app.use('/api/menu', menuRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/suggestions', suggestionRoutes);
+
+// ✅ Serve frontend build (ONLY ONCE)
+app.use(express.static(distPath));
+
+// Home route (API test)
 app.get('/', (req, res) => {
-  res.send('Backend server is running')
-})
+  res.send('Backend server is running');
+});
 
+// ✅ React/Vite fallback route (FIXED)
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
+// hash function
 const md5 = (value) =>
-  require('crypto').createHash('md5').update(String(value || '')).digest('hex')
+  require('crypto').createHash('md5').update(String(value || '')).digest('hex');
 
+// seedMenu
 async function seedMenu() {
-  const count = await MenuItem.countDocuments()
-  if (count > 0) return
+  const count = await MenuItem.countDocuments();
+  if (count > 0) return;
 
   const menu = [
     { name: 'Chicken Burger', category: 'Fast Food', price: 180, img: '/chicken_burger.jpg' },
@@ -61,48 +77,48 @@ async function seedMenu() {
     { name: 'ABC Juice', category: 'Drinks', price: 85, img: '/abc_juice.webp' },
     { name: 'Cheese Paratha', category: 'Breakfast', price: 120, img: '/cheese_paratha.webp' },
     { name: 'Chicken Cheese Paratha', category: 'Breakfast', price: 145, img: '/chicken_cheese_paratha.jpg' }
-  ]
+  ];
 
-  await MenuItem.insertMany(menu)
-  console.log('Seeded menu items')
+  await MenuItem.insertMany(menu);
+  console.log('Seeded menu items');
 }
 
+// seedUsers
 async function seedUsers() {
-  const count = await User.countDocuments()
-  if (count > 0) return
+  const count = await User.countDocuments();
+  if (count > 0) return;
 
   const users = [
     { name: 'Admin User', email: 'admin@cafe.pk', password: md5('admin123'), role: 'admin', phone: '03000000001' },
     { name: 'Dr. Ali', email: 'ali@cafe.pk', password: md5('ali123'), role: 'faculty', phone: '03011223344' },
     { name: 'Engr. Gul Saba', email: 'saba@cafe.pk', password: md5('saba123'), role: 'faculty', phone: '03055667788' },
     { name: 'Fakiha Khan', email: 'fakiha@cafe.pk', password: md5('fakiha123'), role: 'student', phone: '03099887766' }
-  ]
+  ];
 
-  await User.insertMany(users)
-  console.log('Seeded default users')
+  await User.insertMany(users);
+  console.log('Seeded default users');
 }
 
+// seedSuggestions
 async function seedSuggestions() {
-  const count = await Suggestion.countDocuments()
-  if (count > 0) return
-  // No default hard-coded suggestions are inserted.
+  const count = await Suggestion.countDocuments();
+  if (count > 0) return;
 }
 
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
-})
-
-mongoose.connect(MONGO_URL)
+// MongoDB connect
+mongoose
+  .connect(MONGO_URL)
   .then(async () => {
-    console.log('MongoDB connected')
-    await seedMenu()
-    await seedUsers()
-    await seedSuggestions()
+    console.log('MongoDB connected');
+
+    await seedMenu();
+    await seedUsers();
+    await seedSuggestions();
 
     app.listen(PORT, () => {
-      console.log('Server running on port', PORT)
-    })
+      console.log('Server running on port', PORT);
+    });
   })
   .catch((error) => {
-    console.error('Database connection failed', error)
-  })
+    console.error('Database connection failed', error);
+  });

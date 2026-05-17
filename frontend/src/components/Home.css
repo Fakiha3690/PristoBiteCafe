@@ -5,7 +5,6 @@
 }
 
 .welcome-banner {
-  .welcome-banner {
     background: linear-gradient(135deg, #c66b34 0%, #e8a838 100%);
     color: white;
     padding: 40px 20px;
@@ -572,4 +571,3 @@
     .secondary-button {
       width: 100%;
     }
-  }
