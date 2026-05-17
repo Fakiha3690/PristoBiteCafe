@@ -5,569 +5,570 @@
 }
 
 .welcome-banner {
-    background: linear-gradient(135deg, #c66b34 0%, #e8a838 100%);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  background: linear-gradient(135deg, #c66b34 0%, #e8a838 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .welcome-container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+.welcome-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.welcome-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.hero-section-new {
+  background: white;
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 26px;
+  box-shadow: 0 10px 40px rgba(108, 82, 63, 0.1);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-label {
+  display: inline-block;
+  background: #fff1e2;
+  color: #c5602a;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  width: fit-content;
+  margin: 0;
+}
+
+.hero-text-box h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #3d2d20;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: #5d4d45;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  max-width: 520px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffd6b4 0%, #f7c29e 100%);
+}
+
+.hero-image-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.features-section {
+  background: #fff8f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.2rem;
+  color: #3d2d20;
+  margin: 0 0 40px;
+  font-weight: 800;
+}
+
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.feature-item {
+  background: white;
+  padding: 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.feature-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image-wrapper {
+  width: 100%;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.feature-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-item h3 {
+  margin: 18px 18px 8px;
+  font-size: 1.2rem;
+  color: #4a2d1a;
+}
+
+.feature-item p {
+  margin: 0 18px 18px;
+  color: #7b5f52;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.feature-item h3 {
+  font-size: 1.4rem;
+  color: #4a2d1a;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.feature-item p {
+  color: #7b5f52;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.popular-section {
+  padding: 60px 20px;
+  background: white;
+}
+
+.popular-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #3d2d20;
+  margin: 0 0 40px;
+  font-weight: 800;
+}
+
+.items-showcase {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.showcase-item {
+  background: #fff9f2;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.showcase-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-item h3 {
+  padding: 14px 14px 6px;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #4a2d1a;
+  font-weight: 700;
+}
+
+.showcase-item p {
+  padding: 0 14px 14px;
+  margin: 0;
+  color: #c25b27;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.see-all-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.roles-section {
+  background: linear-gradient(135deg, #fff8f0 0%, #fffbf6 100%);
+  padding: 60px 20px;
+}
+
+.roles-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #3d2d20;
+  margin: 0 0 40px;
+  font-weight: 800;
+}
+
+.roles-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.role-card {
+  background: white;
+  padding: 36px 24px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.role-card:hover {
+  border-color: #c66b34;
+  box-shadow: 0 8px 28px rgba(198, 107, 52, 0.15);
+  transform: translateY(-4px);
+}
+
+.role-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.role-card h3 {
+  font-size: 1.5rem;
+  color: #4a2d1a;
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+.role-card p {
+  color: #7b5f52;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #c66b34 0%, #e8a838 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin: 0 0 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 18px;
+  padding: 12px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.primary-button {
+  background: #c66b34;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #b25a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(198, 107, 52, 0.3);
+}
+
+.secondary-button {
+  background: #fff2e6;
+  color: #8a4e29;
+  border: 1.5px solid #f5d8c1;
+}
+
+.secondary-button:hover {
+  background: #f5e6d6;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
   .welcome-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 0 0 10px;
-    line-height: 1.2;
+    font-size: 1.8rem;
   }
 
   .welcome-subtitle {
-    font-size: 1.2rem;
-    margin: 0;
-    opacity: 0.95;
-    font-weight: 500;
-  }
-
-  .hero-section-new {
-    background: white;
-    padding: 40px 20px;
-    margin: 20px;
-    border-radius: 26px;
-    box-shadow: 0 10px 40px rgba(108, 82, 63, 0.1);
-  }
-
-  .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .hero-text-box {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .hero-label {
-    display: inline-block;
-    background: #fff1e2;
-    color: #c5602a;
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-weight: 700;
-    width: fit-content;
-    margin: 0;
-  }
-
-  .hero-text-box h2 {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #3d2d20;
-    line-height: 1.1;
-    font-weight: 800;
-  }
-
-  .hero-description {
-    font-size: 1.05rem;
-    color: #5d4d45;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 14px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
-
-  .hero-image-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    max-width: 520px;
-    margin: 0 auto;
-    aspect-ratio: 4 / 3;
-    border-radius: 20px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ffd6b4 0%, #f7c29e 100%);
-  }
-
-  .hero-image-main {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .features-section {
-    background: #fff8f0;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .features-section h2 {
-    font-size: 2.2rem;
-    color: #3d2d20;
-    margin: 0 0 40px;
-    font-weight: 800;
-  }
-
-  .features-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-  }
-
-  .feature-item {
-    background: white;
-    padding: 0;
-    border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-
-  .feature-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .feature-image-wrapper {
-    width: 100%;
-    min-height: 180px;
-    overflow: hidden;
-  }
-
-  .feature-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .feature-item h3 {
-    margin: 18px 18px 8px;
-    font-size: 1.2rem;
-    color: #4a2d1a;
-  }
-
-  .feature-item p {
-    margin: 0 18px 18px;
-    color: #7b5f52;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .feature-item h3 {
-    font-size: 1.4rem;
-    color: #4a2d1a;
-    margin: 0 0 10px;
-    font-weight: 700;
-  }
-
-  .feature-item p {
-    color: #7b5f52;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .popular-section {
-    padding: 60px 20px;
-    background: white;
-  }
-
-  .popular-section h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #3d2d20;
-    margin: 0 0 40px;
-    font-weight: 800;
-  }
-
-  .items-showcase {
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
-  }
-
-  .showcase-item {
-    background: #fff9f2;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-
-  .showcase-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .showcase-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .showcase-item h3 {
-    padding: 14px 14px 6px;
-    margin: 0;
-    font-size: 1.1rem;
-    color: #4a2d1a;
-    font-weight: 700;
-  }
-
-  .showcase-item p {
-    padding: 0 14px 14px;
-    margin: 0;
-    color: #c25b27;
-    font-weight: 700;
     font-size: 1rem;
   }
 
-  .see-all-btn-wrapper {
-    display: flex;
-    justify-content: center;
+  .hero-section-new {
+    padding: 30px 16px;
+    margin: 16px;
   }
 
-  .roles-section {
-    background: linear-gradient(135deg, #fff8f0 0%, #fffbf6 100%);
-    padding: 60px 20px;
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
+  .hero-text-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-image-box {
+    min-height: 250px;
+  }
+
+  .features-section,
+  .popular-section,
+  .roles-section,
+  .cta-section {
+    padding: 40px 16px;
+  }
+
+  .features-section h2,
+  .popular-section h2,
   .roles-section h2 {
-    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .feature-item {
+    padding: 20px;
+  }
+
+  .feature-icon {
     font-size: 2.2rem;
-    color: #3d2d20;
-    margin: 0 0 40px;
-    font-weight: 800;
+  }
+
+  .items-showcase {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .showcase-item img {
+    height: 140px;
   }
 
   .roles-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .role-card {
-    background: white;
-    padding: 36px 24px;
-    border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .role-card:hover {
-    border-color: #c66b34;
-    box-shadow: 0 8px 28px rgba(198, 107, 52, 0.15);
-    transform: translateY(-4px);
-  }
-
-  .role-emoji {
-    font-size: 3.5rem;
-    margin-bottom: 16px;
-  }
-
-  .role-card h3 {
-    font-size: 1.5rem;
-    color: #4a2d1a;
-    margin: 0 0 14px;
-    font-weight: 700;
-  }
-
-  .role-card p {
-    color: #7b5f52;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .cta-section {
-    background: linear-gradient(135deg, #c66b34 0%, #e8a838 100%);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .cta-section h2 {
-    font-size: 2rem;
-    margin: 0 0 10px;
-    font-weight: 800;
-  }
-
-  .cta-section p {
-    font-size: 1.1rem;
-    margin: 0 0 30px;
-    opacity: 0.95;
+    font-size: 1.5rem;
   }
 
   .cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 600px;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .primary-button,
   .secondary-button {
-    border: none;
-    border-radius: 18px;
-    padding: 12px 28px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .hero-section-new {
+    padding: 20px 12px;
+    margin: 12px;
+    border-radius: 16px;
+  }
+
+  .hero-text-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  .hero-image-box {
+    min-height: 200px;
+  }
+
+  .features-section,
+  .popular-section,
+  .roles-section,
+  .cta-section {
+    padding: 30px 12px;
+  }
+
+  .features-section h2,
+  .popular-section h2,
+  .roles-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .feature-item {
+    padding: 16px;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .items-showcase {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .showcase-item img {
+    height: 120px;
+  }
+
+  .showcase-item h3 {
     font-size: 0.95rem;
-    transition: all 0.25s ease;
-    font-family: inherit;
+    padding: 10px 10px 4px;
   }
 
-  .primary-button {
-    background: #c66b34;
-    color: white;
+  .showcase-item p {
+    padding: 0 10px 10px;
   }
 
-  .primary-button:hover {
-    background: #b25a2a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(198, 107, 52, 0.3);
+  .role-emoji {
+    font-size: 2.5rem;
   }
 
+  .role-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .role-card p {
+    font-size: 0.85rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+
+  .primary-button,
   .secondary-button {
-    background: #fff2e6;
-    color: #8a4e29;
-    border: 1.5px solid #f5d8c1;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    border-radius: 14px;
   }
 
-  .secondary-button:hover {
-    background: #f5e6d6;
-    transform: translateY(-2px);
+  .cta-buttons {
+    flex-direction: column;
   }
 
-  @media (max-width: 768px) {
-    .welcome-title {
-      font-size: 1.8rem;
-    }
-
-    .welcome-subtitle {
-      font-size: 1rem;
-    }
-
-    .hero-section-new {
-      padding: 30px 16px;
-      margin: 16px;
-    }
-
-    .hero-content {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    .hero-text-box h2 {
-      font-size: 1.8rem;
-    }
-
-    .hero-description {
-      font-size: 0.95rem;
-    }
-
-    .hero-image-box {
-      min-height: 250px;
-    }
-
-    .features-section,
-    .popular-section,
-    .roles-section,
-    .cta-section {
-      padding: 40px 16px;
-    }
-
-    .features-section h2,
-    .popular-section h2,
-    .roles-section h2 {
-      font-size: 1.6rem;
-    }
-
-    .features-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .feature-item {
-      padding: 20px;
-    }
-
-    .feature-icon {
-      font-size: 2.2rem;
-    }
-
-    .items-showcase {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-
-    .showcase-item img {
-      height: 140px;
-    }
-
-    .roles-grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .cta-section h2 {
-      font-size: 1.5rem;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .primary-button,
-    .secondary-button {
-      width: 100%;
-    }
+  .primary-button,
+  .secondary-button {
+    width: 100%;
   }
-
-  @media (max-width: 480px) {
-    .welcome-title {
-      font-size: 1.5rem;
-    }
-
-    .welcome-subtitle {
-      font-size: 0.85rem;
-    }
-
-    .hero-section-new {
-      padding: 20px 12px;
-      margin: 12px;
-      border-radius: 16px;
-    }
-
-    .hero-text-box h2 {
-      font-size: 1.4rem;
-    }
-
-    .hero-description {
-      font-size: 0.9rem;
-    }
-
-    .hero-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .hero-buttons button {
-      width: 100%;
-    }
-
-    .hero-image-box {
-      min-height: 200px;
-    }
-
-    .features-section,
-    .popular-section,
-    .roles-section,
-    .cta-section {
-      padding: 30px 12px;
-    }
-
-    .features-section h2,
-    .popular-section h2,
-    .roles-section h2 {
-      font-size: 1.3rem;
-    }
-
-    .features-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .feature-item {
-      padding: 16px;
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-    }
-
-    .feature-item h3 {
-      font-size: 1.1rem;
-    }
-
-    .items-showcase {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .showcase-item img {
-      height: 120px;
-    }
-
-    .showcase-item h3 {
-      font-size: 0.95rem;
-      padding: 10px 10px 4px;
-    }
-
-    .showcase-item p {
-      padding: 0 10px 10px;
-    }
-
-    .role-emoji {
-      font-size: 2.5rem;
-    }
-
-    .role-card h3 {
-      font-size: 1.2rem;
-    }
-
-    .role-card p {
-      font-size: 0.85rem;
-    }
-
-    .cta-section h2 {
-      font-size: 1.3rem;
-    }
-
-    .cta-section p {
-      font-size: 0.9rem;
-    }
-
-    .primary-button,
-    .secondary-button {
-      padding: 10px 20px;
-      font-size: 0.85rem;
-      border-radius: 14px;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-    }
-
-    .primary-button,
-    .secondary-button {
-      width: 100%;
-    }
+}
