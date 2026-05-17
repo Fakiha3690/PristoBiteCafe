@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cup -->
+  <rect x="50" y="40" width="100" height="100" fill="#E8DCC4" rx="5"/>
+  <path d="M 50 40 Q 45 50 45 90 Q 45 130 55 140 L 145 140 Q 155 130 155 90 Q 155 50 150 40" fill="#F5E6D3" stroke="#8B7355" stroke-width="2"/>
+  
+  <!-- Handle -->
+  <path d="M 155 70 Q 185 70 185 100 Q 185 130 155 130" fill="none" stroke="#8B7355" stroke-width="3"/>
+  
+  <!-- Coffee -->
+  <rect x="55" y="50" width="90" height="80" fill="#4A3728" rx="3"/>
+  <rect x="55" y="50" width="90" height="70" fill="#6B5344" rx="3"/>
+  
+  <!-- Ice cubes -->
+  <rect x="65" y="75" width="12" height="12" fill="#B0E0E6" opacity="0.7" rx="1"/>
+  <rect x="85" y="80" width="12" height="12" fill="#ADD8E6" opacity="0.7" rx="1"/>
+  <rect x="105" y="75" width="12" height="12" fill="#B0E0E6" opacity="0.7" rx="1"/>
+  <rect x="125" y="82" width="12" height="12" fill="#ADD8E6" opacity="0.7" rx="1"/>
+  
+  <!-- Whipped cream on top -->
+  <circle cx="85" cy="55" r="8" fill="#FFF8DC"/>
+  <circle cx="100" cy="50" r="9" fill="#FFFACD"/>
+  <circle cx="115" cy="55" r="8" fill="#FFF8DC"/>
+  <circle cx="92" cy="48" r="6" fill="#FFFACD"/>
+  <circle cx="108" cy="48" r="6" fill="#FFF8DC"/>
+</svg>
