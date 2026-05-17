@@ -1,4 +1,4 @@
-﻿require('dotenv').config()
+﻿require('dotenv').config();
 const dns = require('dns')
 const express = require('express')
 const mongoose = require('mongoose')
@@ -19,7 +19,11 @@ const Suggestion = require('./models/Suggestion')
 
 const app = express()
 const PORT = process.env.PORT || 5000
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/presto_cafe'
+const MONGO_URL =
+  process.env.MONGO_URL ||
+  process.env.MONGODB_URI ||
+  process.env.DATABASE_URL ||
+  'mongodb://localhost:27017/presto_cafe'
 
 const uploadPath = path.join(__dirname, 'uploads')
 fs.mkdirSync(uploadPath, { recursive: true })
@@ -32,6 +36,8 @@ app.use('/api/auth', authRoutes)
 app.use('/api/menu', menuRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/suggestions', suggestionRoutes)
+
+app.use(express.static(path.join(__dirname, '../frontend/dist')))
 
 app.get('/', (req, res) => {
   res.send('Backend server is running')
@@ -82,8 +88,11 @@ async function seedSuggestions() {
   // No default hard-coded suggestions are inserted.
 }
 
-mongoose
-  .connect(MONGO_URL)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
+})
+
+mongoose.connect(MONGO_URL)
   .then(async () => {
     console.log('MongoDB connected')
     await seedMenu()
