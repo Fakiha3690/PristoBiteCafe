@@ -2,7 +2,7 @@
 import axios from 'axios'
 import './components/Login.css'
 
-const API = 'http://localhost:5000'
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
 
 const INITIAL_LOGIN = { email: '', password: '' }
 const INITIAL_SIGNUP = {

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = 'http://localhost:5000'
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
 
 export const getOrders = (name) =>
     axios.get(`${API}/api/orders`, { params: { customerName: name } })

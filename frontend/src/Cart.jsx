@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
+
 function Order({ user }) {
 
     const [menu, setMenu] = useState([])
@@ -22,7 +24,7 @@ function Order({ user }) {
     useEffect(() => {
         async function loadData() {
             try {
-                const response = await axios.get('http://localhost:5000/api/menu')
+                const response = await axios.get(`${API}/api/menu`)
                 setMenu(response.data)
             } catch (error) {
                 console.error('Unable to load menu', error)
@@ -132,7 +134,7 @@ function Order({ user }) {
 
             ; (async function () {
                 try {
-                    var response = await axios.post('http://localhost:5000/api/orders', payload)
+                    var response = await axios.post(`${API}/api/orders`, payload)
                     setOrderResponse(response.data)
                     setMessage('Order placed successfully.')
                     saveCart({})
@@ -155,7 +157,7 @@ function Order({ user }) {
 
         ; (async function () {
             try {
-                var response = await axios.get('http://localhost:5000/api/orders/track/' + trackId)
+                var response = await axios.get(`${API}/api/orders/track/${trackId}`)
                 setTrackedOrder(response.data)
             } catch (err) {
                 setMessage('Order not found.')

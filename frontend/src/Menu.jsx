@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-const API_HOST = 'http://localhost:5000'
+const API_HOST = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
 
 function Menu() {
     const [menuItems, setMenuItems] = useState([])

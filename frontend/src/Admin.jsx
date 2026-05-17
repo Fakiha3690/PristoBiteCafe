@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:5000'   // FIX: single source (optional but safe)
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''   // FIX: single source (optional but safe)
 
 function Admin({ user }) {
     const [stats, setStats] = useState({})

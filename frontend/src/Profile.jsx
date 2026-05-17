@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './Profile.css'
 
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
+
 function Profile({ user, onLogout }) {
     const [orders, setOrders] = useState([])
 
@@ -10,7 +12,7 @@ function Profile({ user, onLogout }) {
 
         async function fetchOrders() {
             try {
-                const res = await axios.get('http://localhost:5000/api/orders', {
+                const res = await axios.get(`${API}/api/orders`, {
                     params: { customerName: user.name }
                 })
                 setOrders(res.data)

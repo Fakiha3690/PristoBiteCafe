@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000'
+const API = process.env.API_URL || 'http://localhost:5000'
 
 async function main() {
   try {

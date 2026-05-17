@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:5000'
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
 
 function SuggestionBox({ user }) {
   const [text, setText] = useState('')

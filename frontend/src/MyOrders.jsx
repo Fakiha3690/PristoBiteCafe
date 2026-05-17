@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './MyOrders.css'
 
-const API = 'http://localhost:5000'
+const API = import.meta.env.DEV ? 'http://localhost:5000' : import.meta.env.VITE_API_URL || ''
 
 // simple helper - backend status to display text
 function getDisplayStatus(order) {
